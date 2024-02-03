@@ -1,6 +1,8 @@
-import Todo from '../models/todo.mjs';
+import { Request, Response } from 'express'
 
-export async function getTodosAsync(req, res) {
+import Todo from '../models/todo';
+
+export async function getTodosAsync(_: Request, res: Response) {
     try {
         const todos = await Todo.findAll();
         res.json(todos);
@@ -9,7 +11,7 @@ export async function getTodosAsync(req, res) {
     }
 }
 
-export async function getTodoByIdAsync(req, res) {
+export async function getTodoByIdAsync(req: Request, res: Response) {
     try {
         const todo = await Todo.findByPk(req.params.id);
         if (!todo) {
@@ -22,7 +24,7 @@ export async function getTodoByIdAsync(req, res) {
     }
 }
 
-export async function createTodoAsync(req, res) {
+export async function createTodoAsync(req: Request, res: Response) {
     try {
         const todo = await Todo.create(req.body);
         res.status(201).json(todo);
@@ -31,7 +33,7 @@ export async function createTodoAsync(req, res) {
     }
 }
 
-export async function updateTodoAsync(req, res) {
+export async function updateTodoAsync(req: Request, res: Response) {
     try {
         const [updatedRowsCount] = await Todo.update(req.body, {
             where: { Id: req.params.id }
@@ -47,7 +49,7 @@ export async function updateTodoAsync(req, res) {
     }
 }
 
-export async function deleteTodoByIdAsync(req, res) {
+export async function deleteTodoByIdAsync(req: Request, res: Response) {
     try {
         const deletedRowsCount = await Todo.destroy({ where: { Id: req.params.id } });
         if (deletedRowsCount === 0) {

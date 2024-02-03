@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { getTodosAsync, createTodoAsync, getTodoByIdAsync, updateTodoAsync, deleteTodoByIdAsync } from '../controllers/todos.mjs';
+import { getTodosAsync, createTodoAsync, getTodoByIdAsync, updateTodoAsync, deleteTodoByIdAsync } from '../controllers/todos';
+
 const router = Router();
 
 // Create a new Todo

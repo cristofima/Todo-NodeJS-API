@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express, { json } from 'express';
-import todoRoutes from './routes/todos.mjs';
+import todoRoutes from './routes/todos';
 
 const app = express();
 

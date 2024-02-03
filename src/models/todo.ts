@@ -1,5 +1,5 @@
 import { STRING, INTEGER, BOOLEAN } from 'sequelize';
-import sequelize from '../db.mjs';
+import sequelize from '../db';
 
 const Todo = sequelize.define('ToDos', {
     Id: {
