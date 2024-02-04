@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 
-import Todo from '../models/todo';
+import Todo from '../models/todoModel';
 
 export async function getTodosAsync(_: Request, res: Response) {
     try {

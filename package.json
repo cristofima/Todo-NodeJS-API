@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Todo API with Node.js, Express and PostgreSQL",
   "scripts": {
-    "start": "npx ts-node src/index.ts",
-    "watch": "nodemon src/index.ts"
+    "start": "npx ts-node src/app.ts",
+    "watch": "nodemon src/app.ts"
   },
   "author": "Cristopher Coronado",
   "license": "ISC",

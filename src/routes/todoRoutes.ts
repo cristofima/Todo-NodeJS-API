@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getTodosAsync, createTodoAsync, getTodoByIdAsync, updateTodoAsync, deleteTodoByIdAsync } from '../controllers/todos';
+import { getTodosAsync, createTodoAsync, getTodoByIdAsync, updateTodoAsync, deleteTodoByIdAsync } from '../controllers/todoController';
 
 const router = Router();
 
