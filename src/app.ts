@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import express, { json } from 'express';
-import todoRoutes from './routes/todoRoutes';
+import routes from './routes';
 
 const app = express();
 
 app.use(json());
 
-app.use('/api/todos', todoRoutes);
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

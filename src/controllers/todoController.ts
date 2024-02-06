@@ -35,11 +35,13 @@ export async function createTodoAsync(req: Request, res: Response) {
 
 export async function updateTodoAsync(req: Request, res: Response) {
     try {
-        const [updatedRowsCount] = await Todo.update(req.body, {
-            where: { Id: req.params.id }
+        const [affectedRows] = await Todo.update(req.body, {
+            where: {
+                Id: req.params.id
+            }
         });
 
-        if (updatedRowsCount === 0) {
+        if (affectedRows === 0) {
             res.status(404).json({ message: 'Todo not found.' });
         } else {
             res.status(204).json();
